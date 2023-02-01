@@ -1,0 +1,77 @@
+<section class="contenedor__principal container-sm">
+  <section class="contenedor container-sm">
+    <h1 class="text-center my-2">Formulario de contacto</h1>
+    <form class="form" [formGroup]="form">
+      <section class="form-group">
+        <label class="my-2" for="name">Nombre</label>
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          formControlName="name"
+        />
+        <p>
+          <small
+            *ngIf="
+              form.get('name')?.hasError('required') &&
+              form.get('name')?.touched
+            "
+            class="text-danger"
+          >
+            El nombre es obligatorio
+          </small>
+        </p>
+      </section>
+      <section class="form-group">
+        <label class="my-2" for="email">Email</label>
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          formControlName="email"
+        />
+        <p>
+          <small
+            *ngIf="
+              form.get('email')?.hasError('required') &&
+              form.get('email')?.touched
+            "
+            class="text-danger"
+          >
+            El email es obligatorio
+          </small>
+          <small
+            *ngIf="form.get('email')?.hasError('email')"
+            class="text-danger"
+          >
+            El email no es valido
+          </small>
+        </p>
+      </section>
+      <section class="form-group">
+        <label class="my-2" for="mensaje">Mensaje</label>
+        <textarea
+          class="form-control"
+          id="mensaje"
+          rows="3"
+          formControlName="message"
+        ></textarea>
+        <p>
+          <small
+            *ngIf="
+              form.get('message')?.hasError('required') &&
+              form.get('message')?.touched
+            "
+            class="text-danger"
+          >
+            El mensaje es obligatorio
+          </small>
+        </p>
+      </section>
+      <!-- onclic -->
+      <button mat-raised-button color="warn" [disabled]="form.invalid" style="width: 100%" (click)="enviar()">
+        Enviar
+      </button>
+    </form>
+  </section>
+</section>

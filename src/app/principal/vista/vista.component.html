@@ -1,0 +1,26 @@
+<h2 class="text-center text-light fw-bold m-5">Lista de usuarios</h2>
+<section class="container-sm">
+  <table class="table table-dark table-striped text-light">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Usuario</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Website</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of listado ">
+        <td>{{item.id}}</td>
+        <td>{{item.name}}</td>
+        <td>{{item.username}}</td>
+        <td>{{item.email}}</td>
+        <td>{{item.phone}}</td>
+        <td>{{item.website}}</td>
+      </tr>
+    </tbody>
+  </table>
+</section>

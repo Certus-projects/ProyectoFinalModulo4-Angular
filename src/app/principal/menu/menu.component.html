@@ -1,0 +1,11 @@
+ <mat-toolbar color="#424242" class="navbar">
+    <div>PROYECTO FINAL</div>
+    <div>
+
+      <a mat-button routerLink="home"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>Home</a>
+      <a mat-button routerLink="vista"> <mat-icon>account_circle</mat-icon>Usuarios</a>
+      <a mat-button routerLink="formulario"> <mat-icon>contact_support</mat-icon>Contacto</a>
+        <a mat-button routerLink="login" *ngIf="!usuariologueado"> <mat-icon>play_circle_filled</mat-icon>Login</a>
+        <a mat-button routerLink="login" *ngIf="usuariologueado" (click)="logout()"> <mat-icon>pause_circle_filled</mat-icon>Logout</a>
+    </div>
+  </mat-toolbar>
